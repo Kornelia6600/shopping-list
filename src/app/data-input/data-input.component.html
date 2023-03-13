@@ -1,0 +1,17 @@
+<div class="input-field col s3">
+    <input id="nazwa_produktu" type="text" class="validate" [(ngModel)]="productName" />
+    <label for="nazwa">Nazwa produktu</label>
+  </div>
+  <div class="input-field col s1">
+    <input id="quantity" type="number" class="validate" [(ngModel)]="quantity" />
+    <label for="quantity">Ilość</label>
+  </div>
+  <div class="input-field col s4">
+    <input id="price" type="number" class="validate" [(ngModel)]="price">
+    <label for="price">Wartość</label>
+  </div>
+  <div class="col s2 right-align">
+    <button class="btn-floating  teal lighten-1">
+      <i class="material-icons" (click)="onClickAddTask()">+</i>
+    </button>
+  </div>

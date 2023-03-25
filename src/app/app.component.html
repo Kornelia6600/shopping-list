@@ -3,7 +3,6 @@
   <div class="row">
     <app-data-input [tasks]="tasks"></app-data-input>
   </div>
-
   <ul class="collection">
     <ng-container *ngFor="let task of tasks; let i = index" [ngSwitch]="task.mark">
       <li class="collection-item row" *ngSwitchCase="false">

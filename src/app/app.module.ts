@@ -8,7 +8,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { FormFieldComponent } from './form-field/form-field.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { FormFieldComponent } from './form-field/form-field.component';
     DataInputComponent,
     NavbarComponent,
     FooterComponent,
-    FormFieldComponent,
   ],
   imports: [BrowserModule, FormsModule, BrowserAnimationsModule],
   providers: [],

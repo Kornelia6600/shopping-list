@@ -7,6 +7,9 @@ import { DataInputComponent } from './data-input/data-input.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth.service';
 
 
 @NgModule({
@@ -15,9 +18,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DataInputComponent,
     NavbarComponent,
     FooterComponent,
+    RegistrationComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, FormsModule, BrowserAnimationsModule],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

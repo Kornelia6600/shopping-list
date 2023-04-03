@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +9,14 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
   config: { [key: string]: string } | null = null;
 
-  constructor() {
+  constructor(private router: Router) {
     this.config = {
       title: 'Lista zakupów',
     };
+  }
+
+  switchToLoginPage(){
+      console.log('switchToLoginPage - click')
+      this.router.navigate(['/login']);
   }
 }

@@ -19,4 +19,9 @@ export class NavbarComponent {
       console.log('switchToLoginPage - click')
       this.router.navigate(['/login']);
   }
+
+  switchToRegistrationPage(){
+    console.log('switchToRegistrationPage - click')
+    this.router.navigate(['/registration']);
+  }
 }

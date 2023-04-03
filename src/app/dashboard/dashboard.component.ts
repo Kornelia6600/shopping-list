@@ -35,18 +35,5 @@ export class DashboardComponent {
     this.tasks = [];
   }
 
-  markTask(task: Task) {
-    task.mark = true;
-    this.sortList();
-  }
 
-  deleteTask(task: Task) {
-    this.tasks = this.tasks.filter((e) => e !== task);
-  }
-
-  private sortList() {
-    this.tasks = this.tasks.sort((a: Task, b: Task) =>
-      a.mark === b.mark ? 0 : a.mark ? 1 : -1
-    );
-  }
 }

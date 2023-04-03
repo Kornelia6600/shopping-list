@@ -13,6 +13,7 @@ import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ShopListComponent } from './shop-list/shop-list.component';
  
 
 
@@ -25,6 +26,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     RegistrationComponent,
     LoginComponent,
     DashboardComponent,
+    ShopListComponent,
   ],
   imports: [BrowserModule, FormsModule, BrowserAnimationsModule, HttpClientModule, AppRoutingModule],
   providers: [AuthService],

@@ -1,35 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../auth.service';
+import { Component  } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{
-  loginForm: FormGroup | any;
- 
-  constructor (private formBuilder: FormBuilder, private authService: AuthService){
+export class LoginComponent{
 
-  }
+  loginFormGroup: FormGroup;
 
-  ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+  constructor(formBuilder: FormBuilder, private authService: AuthService) {
+    console.log ('konstr')
+    this.loginFormGroup = formBuilder.group({
+      email: '',
+      password: ''
     });
   }
 
-  onSubmit() {
-    this.authService.login(this.loginForm.value).subscribe(
-      data => {
-        // logowanie udane
+ onSubmit(){
+  console.log ('onSubmit')
+  this.authService.login(this.loginFormGroup. value).subscribe({
+    next: (v) => console.log(v),
+    error: (e) => {
+      console.error(e);
+       alert(e.error.status + " " + e.error.title)
       },
-      error => {
-        // logowanie nieudane
-      }
-    );
-  }
+    complete: () => console.info('complete') 
+  });
+ }
 }
 

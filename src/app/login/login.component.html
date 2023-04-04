@@ -2,14 +2,14 @@
     
     <h2>Panel logowania</h2>
   
-    <form class="pure-form custom-form" onsubmit="return false;">
+    <form [formGroup]="loginFormGroup" class="pure-form custom-form" (ngSubmit)="onSubmit()">
       <fieldset>
         <legend></legend>
   
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Hasło">
+        <input type="email" formControlName="email" placeholder="Email">
+        <input type="password" formControlName="password" placeholder="Hasło">
   
-        <button class="pure-button">Zaloguj</button>
+        <button class="pure-button" type="submit">Zaloguj</button>
       </fieldset>
     </form>
   

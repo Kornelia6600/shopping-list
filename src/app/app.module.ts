@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -9,11 +9,12 @@ import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
-import { AuthService } from './auth.service';
+import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ShopListComponent } from './shop-list/shop-list.component';
+
  
 
 
@@ -28,7 +29,7 @@ import { ShopListComponent } from './shop-list/shop-list.component';
     DashboardComponent,
     ShopListComponent,
   ],
-  imports: [BrowserModule, FormsModule, BrowserAnimationsModule, HttpClientModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, BrowserAnimationsModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule ],
   providers: [AuthService],
   bootstrap: [AppComponent],
 })

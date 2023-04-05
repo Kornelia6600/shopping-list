@@ -21,8 +21,11 @@ export class LoginComponent{
 
  onSubmit(){
   console.log ('onSubmit')
-  this.authService.login(this.loginFormGroup. value).subscribe({
-    next: (v) => console.log(v),
+  this.authService.login(this.loginFormGroup.value.email,this.loginFormGroup.value.password).subscribe({
+    next: (odpowiedzSerwera) => {
+      console.log('next:');
+      console.log(odpowiedzSerwera);
+    },
     error: (e) => {
       console.error(e);
        alert(e.error.status + " " + e.error.title)

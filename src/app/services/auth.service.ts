@@ -7,12 +7,20 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   private loginUrl = 'http://192.168.50.62:8082/api/v1/Authentication';
+  private http: HttpClient
 
-  constructor(private http: HttpClient) { }
+  constructor(httpService: HttpClient) {
+    this.http = httpService;
+  }
 
-  login(credentials: { email: string, password: string }): Observable<any> {
+  login(email: string, password: string): Observable<any> {
 
-    const data = { "Username": credentials.email, "Password":credentials.password };
+    const data = 
+    {
+      "Username": email,
+      "Password":password
+    };
+
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',

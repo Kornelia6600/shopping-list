@@ -14,6 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ShopListComponent } from './shop-list/shop-list.component';
+import { LocalStorageService } from './services/LocalStorage.service';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
  
 
@@ -29,8 +32,17 @@ import { ShopListComponent } from './shop-list/shop-list.component';
     DashboardComponent,
     ShopListComponent,
   ],
-  imports: [BrowserModule, FormsModule, BrowserAnimationsModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule ],
-  providers: [AuthService],
+  imports: [
+    BrowserModule, 
+    FormsModule, 
+    BrowserAnimationsModule, 
+    HttpClientModule, 
+    AppRoutingModule, 
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+   ],
+  providers: [AuthService, LocalStorageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

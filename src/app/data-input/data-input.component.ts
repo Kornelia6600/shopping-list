@@ -16,7 +16,7 @@ export class DataInputComponent {
 
   constructor(formBuilder: FormBuilder){
     this.dataFormGroup = formBuilder.group({
-      produktName: '',
+      productName: '',
       quantity: '',
       price: ''
     })

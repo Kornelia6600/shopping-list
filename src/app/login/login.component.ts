@@ -1,6 +1,8 @@
 import { Component  } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { AuthenticateResponseModelDataResponse } from '../services/models/AuthenticateResponseModelDataResponse';
+import { LocalStorageService } from '../services/LocalStorage.service';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +12,17 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent{
 
   loginFormGroup: FormGroup;
-
-  constructor(formBuilder: FormBuilder, private authService: AuthService) {
+  authService: AuthService;
+  localStorageService: LocalStorageService;
+  
+  constructor(
+    formBuilder: FormBuilder,
+    newAuthService: AuthService,
+    localStorageServiceDI: LocalStorageService
+  ){
     console.log ('konstr')
+    this.authService = newAuthService;
+    this.localStorageService = localStorageServiceDI;
     this.loginFormGroup = formBuilder.group({
       email: '',
       password: ''
@@ -22,9 +32,10 @@ export class LoginComponent{
  onSubmit(){
   console.log ('onSubmit')
   this.authService.login(this.loginFormGroup.value.email,this.loginFormGroup.value.password).subscribe({
-    next: (odpowiedzSerwera) => {
+    next: (response:AuthenticateResponseModelDataResponse) => {
       console.log('next:');
-      console.log(odpowiedzSerwera);
+      console.log(response); 
+
     },
     error: (e) => {
       console.error(e);

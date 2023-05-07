@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Task } from './task';
+import { Component } from '@angular/core';
+import { LocalStorageService } from './services/LocalStorage.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,4 @@ import { Task } from './task';
 })
 export class AppComponent {
 
-
- 
 }

@@ -2,16 +2,23 @@
     
     <h2 class="center">Panel rejestracji</h2>
   
-    <form class="pure-form custom-form center" onsubmit="return false;">
+    <form [formGroup]="registrationFormGroup" class="pure-form custom-form center" (ngSubmit)="onSubmit()">
       <fieldset>
         <legend></legend>
   
-        <input type="email" placeholder="Email">
-        <input type="text" placeholder="Imię">
-        <input type="password" placeholder="Hasło">
-        <input type="password" placeholder="Powtórz Hasło">
-  
-        <button class="pure-button">Zatwierdź</button>
+        <input type="email" formControlName="email"  placeholder="Email">
+        <input type="text" formControlName="name" placeholder="Imię">
+        <input type="password" formControlName="password" placeholder="Hasło">
+
+          <mat-form-field>
+            <mat-error matInput *ngIf="myGroup.hasError('requred', 'password')"> Proszę wpisać hasło </mat-error>
+            
+            <input matInput type="password" formControlName="confirmPassword" placeholder="Powtórz Hasło"
+            [errorStateMatcher]="matcher">
+            <mat-error *ngIf="myGroup.hasError('notSame')"> Walidacja hasła nie powiodła się </mat-error>
+          </mat-form-field>
+
+        <button class="pure-button" type="submit">Zatwierdź</button>
       </fieldset>
     </form>
   </div>

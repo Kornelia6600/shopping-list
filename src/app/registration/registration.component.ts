@@ -14,7 +14,7 @@ export class RegistrationComponent {
   registrationFormGroup: FormGroup;
   authService: AuthService;
 
-  myGroup: FormGroup;
+
 
   matcher = new PasswordErrorStateMatcher();
 
@@ -27,17 +27,16 @@ export class RegistrationComponent {
     this.registrationFormGroup = formBuilder.group({
       email: '',
       name: '',
-      password: '',
-      confirmPassword: '',
-    });
-    this.myGroup = this.formBuilder.group({
       password: ['',[Validators.required]],
       confirmPassword: ['']
-    },{validator: this.checkPassword})
+
+    } ,{validator: this.checkPassword});
+    
     
   }
 
   checkPassword(group: FormGroup){
+    console.log ('checkPassword')
     let pass = group.controls['password'].value;
     let confirmPass = group.controls['confirmPassword'].value;
 

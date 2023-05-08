@@ -6,10 +6,11 @@
       <fieldset>
         <legend></legend>
   
-        <input type="email" formControlName="email" placeholder="Email">
-        <input type="password" formControlName="password" placeholder="Hasło">
+        <input type="email" formControlName="email" placeholder="Email" #emailLoginInput>
+        <input type="password" formControlName="password" placeholder="Hasło" #passwordLoginInput>
   
-        <button class="pure-button" type="submit">Zaloguj</button>
+        <button  class="waves-effect waves-light btn-small teal lighten-1" type="submit"
+        [disabled]="!loginFormGroup.valid || emailLoginInput.value === '' || passwordLoginInput.value === ''">Zaloguj</button>
       </fieldset>
     </form>
   

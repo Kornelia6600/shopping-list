@@ -1,24 +1,28 @@
 <div class="c">
-    
-    <h2 class="center">Panel rejestracji</h2>
-  
-    <form [formGroup]="registrationFormGroup" class="pure-form custom-form center" (ngSubmit)="onSubmit()">
-      <fieldset>
-        <legend></legend>
-  
-        <input type="email" formControlName="email"  placeholder="Email">
-        <input type="text" formControlName="name" placeholder="Imię">
-        <input type="password" formControlName="password" placeholder="Hasło">
 
-          <mat-form-field>
-            <mat-error matInput *ngIf="myGroup.hasError('requred', 'password')"> Proszę wpisać hasło </mat-error>
-            
-            <input matInput type="password" formControlName="confirmPassword" placeholder="Powtórz Hasło"
-            [errorStateMatcher]="matcher">
-            <mat-error *ngIf="myGroup.hasError('notSame')"> Walidacja hasła nie powiodła się </mat-error>
-          </mat-form-field>
+  <h2 class="center">Panel rejestracji</h2>
 
-        <button class="pure-button" type="submit">Zatwierdź</button>
-      </fieldset>
-    </form>
-  </div>
+  <form [formGroup]="registrationFormGroup" class="pure-form custom-form center" (ngSubmit)="onSubmit()">
+    <fieldset>
+      <legend></legend>
+
+      <input type="email" formControlName="email" placeholder="Email" #emailInput>
+      <input type="text" formControlName="name" placeholder="Imię" #nameInput>
+
+      <div class="form-field">
+        <input matInput type="password" formControlName="password" required placeholder="Hasło" #passwordInput>
+        <mat-error matInput *ngIf="registrationFormGroup.hasError('requred', 'password')"> Proszę wpisać hasło
+        </mat-error>
+      </div>
+
+      <div class="form-field">
+        <input matInput type="password" formControlName="confirmPassword" placeholder="Powtórz Hasło"
+          [errorStateMatcher]="matcher" #confirmPasswordInput>
+        <mat-error *ngIf="registrationFormGroup.hasError('notSame')"> Hasła nie są takie same </mat-error>
+      </div>
+
+      <button class="waves-effect waves-light btn-small teal lighten-1" type="submit"
+        [disabled]="!registrationFormGroup.valid || emailInput.value === '' || nameInput.value === '' || passwordInput.value === '' || confirmPasswordInput.value === '' ">Zatwierdź</button>
+    </fieldset>
+  </form>
+</div>

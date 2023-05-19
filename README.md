@@ -1,27 +1,17 @@
-# ListaZakupow
+# Opis projektu
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
+Projekt ma na celu stworzenie listy zakupów która będzie zawierała następujące funkcjonalności: rejestracja, logowanie użytkownika, wyświetlona lista produktów, dodawanie, usuwanie, odznaczanie poszczególnych pozycji, czyszczenie listy.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Wymagania
 
-## Code scaffolding
+Do uruchomienia projektu wymagane jest:
+Node.js 
+Angular CLI version 15.1.1.
+materialize-css 1.0.0-rc.2
+rxjs@7.8.0
+RestAPI utworzone na potrzeby projektu przez osobę trzecią.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Cel dydaktyczny
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Projekt ten stworzyłam na potrzeby przetestowania zdobytej wiedzy i umiejętności w kursie internetowym na portalu UDEMY  (zakończony certyfikatem) oraz innych kursach on-line dostępnych w internecie.  We własnym zakresie postanowiłam zapoznać się ze sposobami komunikacji z usługą RestAPI.

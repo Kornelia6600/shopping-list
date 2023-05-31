@@ -1,33 +1,5 @@
 <div class="container">
   <app-navbar></app-navbar>
-  <div class="row">
-    <app-data-input [tasks]="tasks"></app-data-input>
-  </div>
-
-  <ul class="collection">
-    <ng-container *ngFor="let task of tasks; let i = index" [ngSwitch]="task.mark">
-      <li class="collection-item row" *ngSwitchCase="false">
-        <span>{{i + 1}}. {{task.name}} | {{task.quantity}} szt/kg | {{task.value}} zł szt/kg</span>
-        <div class="right-align">
-          <button>
-            <i class="material-icons" (click)="markTask(task)">
-              <img src="https://cdn2.iconfinder.com/data/icons/greenline/512/check-512.png" alt="Smiley face" width="36"
-                height="36" style="vertical-align:middle">
-            </i>
-          </button>
-          <button class="btn-floating btn-small red">
-            <i class="material-icons" (click)="deleteTask(task)">-</i>
-          </button>
-        </div>
-      </li>
-      <li class="collection-item row" *ngSwitchCase="true">
-        <span class="col done">{{task.name}} {{task.quantity}} {{task.value}}</span>
-      </li>
-    </ng-container>
-  </ul>
-
-  <div class="right-align">
-    <button class="waves-effect waves-light btn-small blue lighten-3" (click)="clearTasks()">{{ config?.['clear'] }}
-    </button>
-  </div>
+     <router-outlet></router-outlet>
   <app-footer></app-footer>
+

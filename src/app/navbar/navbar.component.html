@@ -1,7 +1,13 @@
 <nav class="row">
-    <div class="nav-wrapper blue">
-      <div class="z-depth-5">
-        <span class="brand-logo center">{{ config?.['title'] | uppercase }}</span>
-      </div>
+  <div class="nav-wrapper blue">
+    <div class="z-depth-5">
+      <span class="col">
+        <button (click)="switchToLoginPage()" class="waves-effect waves-light btn">Login</button>
+      </span>
+      <span class="col right">
+        <button (click)="switchToRegistrationPage()" class="waves-effect waves-light btn">Registration</button>
+      </span>
+      <span class="brand-logo center">{{ config?.['title'] | uppercase }}</span>
     </div>
-  </nav>
+  </div>
+</nav>

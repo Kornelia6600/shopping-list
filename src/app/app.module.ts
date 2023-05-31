@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataInputComponent } from './data-input/data-input.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialExampleModule } from './material.module';
-import { ReactiveFormsModule } from '@angular/forms';
-import {MatNativeDateModule} from '@angular/material/core';
-import {HttpClientModule} from '@angular/common/http';
-import { FormFieldComponent } from './form-field/form-field.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './services/auth.service';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './routing/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ShopListComponent } from './shop-list/shop-list.component';
+import { LocalStorageService } from './services/LocalStorage.service';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+ 
+
 
 @NgModule({
   declarations: [
@@ -20,15 +27,22 @@ import { FormFieldComponent } from './form-field/form-field.component';
     DataInputComponent,
     NavbarComponent,
     FooterComponent,
-    FormFieldComponent,
+    RegistrationComponent,
+    LoginComponent,
+    DashboardComponent,
+    ShopListComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    BrowserAnimationsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    BrowserModule, 
+    FormsModule, 
+    BrowserAnimationsModule, 
+    HttpClientModule, 
+    AppRoutingModule, 
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+   ],
+  providers: [AuthService, LocalStorageService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

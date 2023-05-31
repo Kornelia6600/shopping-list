@@ -1,0 +1,10 @@
+<div class="row">
+    <app-data-input [tasks]="tasks"></app-data-input>
+  </div>
+  
+<app-shop-list [tasks]="tasks"></app-shop-list>
+
+  <div class="main">
+    <button class="waves-effect waves-light btn-small blue lighten-3" (click)="clearTasks()">{{ config?.['clear'] }}
+    </button>
+  </div>

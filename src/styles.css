@@ -1,24 +1,44 @@
 body {
-    background-color: rgb(252, 250, 221);
-  }
-  h1 {
-    color: blue;
-    font-family: verdana;
-    font-size: 10%;
-  }
-  p {
-    color: red;
-  }
-  
-  button {
-    border: green;
-    color: green;
-    cursor: pointer;
-    appearance: none;
-    background-color: inherit;
-    overflow: hidden;
-    text-decoration: none;
-  }
-  
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  background-color: rgb(252, 250, 221);
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+h1 {
+  color: blue;
+  font-family: verdana;
+  font-size: 10%;
+}
+p {
+  color: red;
+}
+
+button {
+  border: green;
+  color: green;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+  padding:0;
+  margin:0;
+}
+
+
+.c {
+  margin: auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.p {
+  font-size: .9em;
+  padding-top: 140px;
+}
+
+

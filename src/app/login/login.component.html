@@ -1,0 +1,17 @@
+<div class="c">
+    
+    <h2>Panel logowania</h2>
+  
+    <form [formGroup]="loginFormGroup" class="pure-form custom-form" (ngSubmit)="onSubmit()">
+      <fieldset>
+        <legend></legend>
+  
+        <input type="email" formControlName="email" placeholder="Email" #emailLoginInput>
+        <input type="password" formControlName="password" placeholder="Hasło" #passwordLoginInput>
+  
+        <button class="btn" class="waves-effect waves-light btn-small teal lighten-1" type="submit" (click)="onClickBtn()"
+        [disabled]="!loginFormGroup.valid || emailLoginInput.value === '' || passwordLoginInput.value === ''">Zaloguj</button>
+      </fieldset>
+    </form>
+  
+  </div>

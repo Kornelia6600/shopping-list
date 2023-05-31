@@ -21,8 +21,11 @@
         <mat-error *ngIf="registrationFormGroup.hasError('notSame')"> Hasła nie są takie same </mat-error>
       </div>
 
-      <button class="waves-effect waves-light btn-small teal lighten-1" type="submit"
+      <div >
+      <button class="btn" class="waves-effect waves-light btn-small teal lighten-1" type="submit" (click)="onClickBtn()"
         [disabled]="!registrationFormGroup.valid || emailInput.value === '' || nameInput.value === '' || passwordInput.value === '' || confirmPasswordInput.value === '' ">Zatwierdź</button>
-    </fieldset>
+        
+      </div> 
+  </fieldset>
   </form>
 </div>

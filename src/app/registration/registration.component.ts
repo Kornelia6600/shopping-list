@@ -63,4 +63,9 @@ export class RegistrationComponent {
         },
         complete: () => console.info('complete')
       });
-  }}
+      
+  }
+  onClickBtn(){
+        alert('FUNKCJONALNOŚĆ W PRZYGOTOWANIU');
+      }
+}

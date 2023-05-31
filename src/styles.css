@@ -1,5 +1,7 @@
 body {
   background-color: rgb(252, 250, 221);
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 h1 {
   color: blue;
@@ -23,11 +25,10 @@ button {
 html,
 body {
   height: 100%;
+  padding:0;
+  margin:0;
 }
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+
 
 .c {
   margin: auto;
@@ -39,4 +40,5 @@ body {
   font-size: .9em;
   padding-top: 140px;
 }
+
 

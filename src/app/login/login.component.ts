@@ -44,5 +44,8 @@ export class LoginComponent{
     complete: () => console.info('complete') 
   });
  }
+ onClickBtn(){
+  alert ('FUNKCJONALNOŚĆ W PRZYGOTOWANIU');
+ }
 }
 

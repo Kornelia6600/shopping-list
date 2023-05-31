@@ -9,7 +9,7 @@
         <input type="email" formControlName="email" placeholder="Email" #emailLoginInput>
         <input type="password" formControlName="password" placeholder="Hasło" #passwordLoginInput>
   
-        <button  class="waves-effect waves-light btn-small teal lighten-1" type="submit"
+        <button class="btn" class="waves-effect waves-light btn-small teal lighten-1" type="submit" (click)="onClickBtn()"
         [disabled]="!loginFormGroup.valid || emailLoginInput.value === '' || passwordLoginInput.value === ''">Zaloguj</button>
       </fieldset>
     </form>

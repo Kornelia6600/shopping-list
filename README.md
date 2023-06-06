@@ -15,3 +15,7 @@ RestAPI utworzone na potrzeby projektu przez osobę trzecią.
 ## Cel dydaktyczny
 
 Projekt ten stworzyłam na potrzeby przetestowania zdobytej wiedzy i umiejętności w kursie internetowym na portalu UDEMY  (zakończony certyfikatem) oraz innych kursach on-line dostępnych w internecie.  We własnym zakresie postanowiłam zapoznać się ze sposobami komunikacji z usługą RestAPI.
+
+## PODGLĄD:
+
+https://shopping-list-black-seven.vercel.app/dashboard
